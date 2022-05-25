@@ -1,0 +1,236 @@
+:root {
+    --background: #edede9;
+    --orange: #f7931a;
+    --soft-orange: #ffe9d5;
+    --whithe: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    width: 100%;
+    min-width: 320px;
+    background-color: var(--background);
+    padding: 15px;
+}
+
+main .presentation {
+    width: 100%;
+    /* background-color: #333;
+    color: var(--whithe); */
+    display: grid;
+    gap: 10px;
+    grid-template-columns: minmax(30rem, 1fr) 1fr;
+    grid-template-rows: 550px;
+    place-items: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+}
+
+.presentation__container {
+    place-self: center;
+    padding: 10px;
+}
+
+.presentation__title {
+    font-size: 3rem;
+    padding: 5px;
+    font-weight: 900;
+    line-height: 2.9rem;
+    margin-bottom: 24px;
+}
+
+.presentation__description {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+}
+
+.presentation__container button {
+    padding: 5px;
+    background-color: var(--orange);
+    border-radius: 20px;
+    border: none;
+    color: var(--whithe);
+    font-weight: bolder;
+    padding: 12px 24px;
+}
+
+.presentation .presentation__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.presentation__image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.service__container {
+    margin: 100px 0;
+}
+
+.service__title {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.service__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 250px));
+    /* grid-auto-rows: 1fr; */
+    grid-template-areas: 
+    "video video first second"
+    "video video third fouth";
+    justify-content: center;
+    gap: 20px;
+}
+
+.service__container-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service__container-item img {
+    width: 100%;
+}
+
+.service__video {
+    grid-area: video;
+}
+
+.service__first-img {
+    grid-area: first;
+}
+
+.service__second-img {
+    grid-area: second;
+}
+
+.service__third-img {
+    grid-area: third;
+}
+
+.service__fouth-img {
+    grid-area: fourth;
+}
+
+.menu__container {
+    margin-bottom: 200px;
+}
+
+.menu__title {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu__grid {
+    display: grid;
+    gap: 25px;
+    justify-content: center;
+    grid-template-columns: repeat(5, minmax(100px, 250px));
+}
+
+.menu__grid-item {
+    width: 100%;
+    height: 100%;
+    background-color: darksalmon;
+    padding: 15px;
+    border-top-left-radius: 30px;
+    object-fit: contain;
+}
+
+.menu__grid-item:hover {
+    box-shadow: 8px 5px 3px #ffae6c, -8px -5px 3px burlywood;
+}
+
+.menu__grid-item img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .presentation {
+        padding: 0 2rem;
+        grid-template-columns: minmax(30rem, 50rem);
+        background-image: url('../assets/img/hero.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        justify-content: center;
+    }
+
+    .presentation__image {
+        display: none;
+    }
+
+    .presentation__description {
+        background-color: #d8d6d663;
+        border-radius: 8px;
+    }
+
+    .service__grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "video video video video"
+        "first second third fouth";
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .service__container-item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .service__container-item img {
+        width: 100%;
+    }
+
+    .menu__grid {
+        grid-template-columns: repeat(3, minmax(100px, 250px));
+    }
+}
+
+@media (max-width: 375px) {
+    .service__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "video video"
+        "first second" 
+        "third fouth";
+    }
+
+    .service__container-item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .service__container-item img {
+        width: 100%;
+    }
+
+    .menu__grid {
+        grid-template-columns: repeat(2, minmax(100px, 250px));
+    }
+
+}
